@@ -1,0 +1,13 @@
+{
+  "name": "agentmesh",
+  "description": "Single-plugin orchestration for the agent tool stack with cost-aware mesh modes, status, and MCP wiring.",
+  "version": "0.1.2",
+  "author": {
+    "name": "Santiago Sanchez Correa"
+  },
+  "license": "MIT",
+  "keywords": ["orchestration", "mcp", "yagni", "agentmesh", "productivity"],
+  "commands": "commands/",
+  "skills": "skills/",
+  "hooks": "hooks/copilot-hooks.json"
+}

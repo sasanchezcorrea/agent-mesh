@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" role="img" aria-labelledby="title desc">
+  <title id="title">agentmesh logo</title>
+  <desc id="desc">A finite-difference mesh of square cells with different activation costs.</desc>
+  <g transform="translate(28 28)">
+    <g fill="none" stroke="#111827" stroke-width="2" opacity=".16">
+      <path d="M35 35h190M35 63h190M35 91h190M35 119h190M35 147h190M35 175h190M35 203h190"/>
+      <path d="M35 35v190M63 35v190M91 35v190M119 35v190M147 35v190M175 35v190M203 35v190M231 35v190"/>
+    </g>
+    <g fill="#111827">
+      <rect x="119" y="35" width="22" height="22" rx="3" opacity=".24"/>
+      <rect x="91" y="63" width="22" height="22" rx="3" opacity=".20"/>
+      <rect x="119" y="63" width="22" height="22" rx="3" opacity=".46"/>
+      <rect x="147" y="63" width="22" height="22" rx="3" opacity=".28"/>
+      <rect x="63" y="91" width="22" height="22" rx="3" opacity=".16"/>
+      <rect x="91" y="91" width="22" height="22" rx="3" opacity=".54"/>
+      <rect x="119" y="91" width="22" height="22" rx="3" opacity=".96"/>
+      <rect x="147" y="91" width="22" height="22" rx="3" opacity=".76"/>
+      <rect x="175" y="91" width="22" height="22" rx="3" opacity=".32"/>
+      <rect x="35" y="119" width="22" height="22" rx="3" opacity=".12"/>
+      <rect x="63" y="119" width="22" height="22" rx="3" opacity=".38"/>
+      <rect x="91" y="119" width="22" height="22" rx="3" opacity=".82"/>
+      <rect x="119" y="119" width="22" height="22" rx="3"/>
+      <rect x="147" y="119" width="22" height="22" rx="3" opacity=".88"/>
+      <rect x="175" y="119" width="22" height="22" rx="3" opacity=".56"/>
+      <rect x="203" y="119" width="22" height="22" rx="3" opacity=".22"/>
+      <rect x="63" y="147" width="22" height="22" rx="3" opacity=".12"/>
+      <rect x="91" y="147" width="22" height="22" rx="3" opacity=".44"/>
+      <rect x="119" y="147" width="22" height="22" rx="3" opacity=".72"/>
+      <rect x="147" y="147" width="22" height="22" rx="3" opacity=".58"/>
+      <rect x="175" y="147" width="22" height="22" rx="3" opacity=".26"/>
+      <rect x="91" y="175" width="22" height="22" rx="3" opacity=".10"/>
+      <rect x="119" y="175" width="22" height="22" rx="3" opacity=".28"/>
+      <rect x="147" y="175" width="22" height="22" rx="3" opacity=".14"/>
+      <rect x="119" y="203" width="22" height="22" rx="3" opacity=".08"/>
+    </g>
+  </g>
+  <text x="282" y="158" fill="#111827" font-family="Inter,Segoe UI,sans-serif" font-size="86" font-weight="700" letter-spacing="-3">agentmesh</text>
+</svg>

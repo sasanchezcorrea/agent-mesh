@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "description": "Single source of truth for the tools agentmesh orchestrates: MCP servers registered per-client by setup/register-mcp.js, token compression through hooks, and the agentmesh mode layer shipped as this plugin's skills/commands.",
+  "servers": {
+    "engram": {
+      "command": "engram",
+      "args": ["mcp", "--tools=agent"],
+      "excludedTools": []
+    },
+    "ax": {
+      "command": "ax",
+      "args": ["mcp"],
+      "excludedTools": []
+    },
+    "codegraph": {
+      "command": "codegraph",
+      "args": ["serve", "--mcp"],
+      "excludedTools": []
+    },
+    "serena": {
+      "command": "serena",
+      "args": ["start-mcp-server", "--project-from-cwd"],
+      "contextArgByClient": {
+        "claude": "--context=claude-code",
+        "copilot": "--context=ide-assistant",
+        "vscode": "--context=ide-assistant"
+      },
+      "excludedTools": [
+        "write_memory",
+        "read_memory",
+        "list_memories",
+        "delete_memory",
+        "rename_memory",
+        "edit_memory"
+      ]
+    }
+  },
+  "hooks": {
+    "rtk": {
+      "description": "Rewrites Bash/shell tool calls to their token-compressed rtk equivalents (rtk git, rtk gh, rtk grep, ...). Not an MCP server -- wired as a PreToolUse hook via hooks/rtk-rewrite.js, a thin node wrapper (required so the hook's command field stays shell-agnostic) around RTK's own native `rtk hook <client>` subcommand. Bundled into hooks/claude-hooks.json and hooks/copilot-hooks.json. Nothing for register-mcp.js to do here: installing the plugin is enough.",
+      "requiresBinary": "rtk"
+    }
+  },
+  "builtin": {
+    "mesh": {
+      "description": "Synchronized stack conductor: one `/mesh <level>` drives the required Ponytail companion to the same level and RTK to matching compression (ultra-compact at ultra), and sets CodeGraph/Serena discovery posture and output verbosity. Ships directly with the plugin; coordinates the tool stack without another runtime dependency."
+    }
+  }
+}

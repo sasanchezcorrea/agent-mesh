@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "bash": "node \"${PLUGIN_ROOT}/hooks/mesh-activate.js\"",
+        "powershell": "node \"${PLUGIN_ROOT}\\hooks\\mesh-activate.js\"",
+        "timeoutSec": 5
+      },
+      {
+        "type": "command",
+        "bash": "node \"${PLUGIN_ROOT}/hooks/mesh-status-hook.js\"",
+        "powershell": "node \"${PLUGIN_ROOT}\\hooks\\mesh-status-hook.js\"",
+        "timeoutSec": 5
+      }
+    ],
+    "userPromptSubmitted": [
+      {
+        "type": "command",
+        "bash": "node \"${PLUGIN_ROOT}/hooks/mesh-mode-tracker.js\"",
+        "powershell": "node \"${PLUGIN_ROOT}\\hooks\\mesh-mode-tracker.js\"",
+        "timeoutSec": 5
+      }
+    ],
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": "node \"${PLUGIN_ROOT}/hooks/rtk-rewrite.js\"",
+        "powershell": "node \"${PLUGIN_ROOT}\\hooks\\rtk-rewrite.js\"",
+        "timeoutSec": 5
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "agentmesh": "0.1.2",
+  "tools": {
+    "engram": {
+      "command": "engram",
+      "version": "1.17.0",
+      "source": "Gentleman-Programming/engram",
+      "checksums": {
+        "engram_1.17.0_linux_amd64.tar.gz": "16422ec4596ba4007030bd4b589e139d5a3409eb846f2ffb19a147c953f1e0fe",
+        "engram_1.17.0_linux_arm64.tar.gz": "64e1dc3401046078673468fadedbcec5b28056aab29bf02e35774ffb26f8993d"
+      }
+    },
+    "ax": {
+      "command": "ax",
+      "version": "0.35.0",
+      "source": "Necmttn/ax"
+    },
+    "codegraph": {
+      "command": "codegraph",
+      "version": "0.9.4",
+      "source": "colbymchenry/codegraph"
+    },
+    "serena": {
+      "command": "serena",
+      "version": "1.5.3",
+      "source": "oraios/serena"
+    },
+    "rtk": {
+      "command": "rtk",
+      "version": "0.42.4",
+      "source": "rtk-ai/rtk",
+      "checksums": {
+        "rtk-x86_64-unknown-linux-musl.tar.gz": "34975116da11e09e502501daf758143e0b22ed3a42a10eb67fb693a6270d9e36",
+        "rtk-aarch64-unknown-linux-gnu.tar.gz": "cc2b91c064eb670c097c184913c8fbcb1a943d53d7fe505375e96ba0c5b6459f"
+      }
+    },
+    "ponytail": {
+      "version": "4.8.4",
+      "source": "DietrichGebert/ponytail",
+      "plugin": "ponytail@ponytail",
+      "hosts": ["claude", "copilot"]
+    }
+  }
+}

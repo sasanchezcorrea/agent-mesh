@@ -1,0 +1,2 @@
+description = "Evaluate every connected tool and skill for value, cost, and redundancy"
+prompt = "Evaluate the live agentmesh stack, not just the manifest. For every connected MCP server, hook, and mesh skill, report: connected/working status, concrete value in this task, token or latency cost, overlap with another component, failure risk, and a decision: keep, limit by mode, or remove. Use the existing /mesh-cost measurement when available. Do not invent measurements; label unknowns. End with the smallest recommended stack for lite, full, and ultra modes."

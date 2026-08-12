@@ -1,0 +1,19 @@
+{
+  "name": "agentmesh",
+  "description": "Single-plugin orchestration for CodeGraph, AX, Engram, RTK, Serena, and cost-aware mesh modes.",
+  "owner": {
+    "name": "Santiago Sanchez Correa"
+  },
+  "plugins": [
+    {
+      "name": "agentmesh",
+      "description": "Wires up the 6-tool agent stack, reports what's connected, and what it's costing you.",
+      "source": "./",
+      "category": "productivity",
+      "tags": ["orchestration", "mcp", "yagni", "agentmesh", "productivity"],
+      "commands": "commands/",
+      "skills": "skills/",
+      "hooks": "hooks/copilot-hooks.json"
+    }
+  ]
+}

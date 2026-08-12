@@ -1,0 +1,36 @@
+{
+  "name": "agentmesh",
+  "version": "0.1.2",
+  "description": "Single-plugin orchestration for CodeGraph, AX, Engram, RTK, Serena, Ponytail, and cost-aware mesh modes across Claude Code, Copilot CLI, and VS Code.",
+  "keywords": ["agentmesh", "mcp", "orchestration", "cost-aware", "skills"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "author": {
+    "name": "Santiago Sanchez Correa"
+  },
+  "files": [
+    "AGENTS.md",
+    ".github/copilot-instructions.md",
+    "CHANGELOG.md",
+    "manifest.json",
+    "stack.lock.json",
+    "hooks/",
+    "skills/",
+    "commands/",
+    "setup/",
+    "dashboard/",
+    "assets/",
+    "scripts/uninstall.js",
+    "docs/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "npm run check-syntax && npm test",
+    "check-syntax": "node scripts/check-syntax.js",
+    "hooks:install": "prek install",
+    "test": "node --test tests/*.test.js",
+    "check-stack": "node setup/check-stack.js"
+  }
+}
