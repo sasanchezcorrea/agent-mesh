@@ -108,10 +108,11 @@ Being precise about this, since it's easy to overclaim:
    installs agentmesh itself and registers the 4 MCP servers.
    `--check` reports what's present/missing without installing anything, for
    anyone who wants to see the gap before running it for real.
-4. **`/mesh-cost`** — runs `dashboard/cost-report.js`, which re-measures the
-   live, marginal AI-credit cost of each MCP server in Copilot CLI by
-   toggling `--disable-mcp-server` per server. Never invents a number; if the
-   script errors, it reports the error.
+4. **`/mesh-cost`** — runs `dashboard/cost-report.js`, which auto-selects a
+   Copilot CLI or Claude Code adapter and re-measures each MCP server against a
+   zero-MCP floor. Copilot reports AI Credits; Claude reports cache-aware input
+   footprint and estimated USD when available. Never invents or normalizes a
+   number; unsupported hosts and errors are explicit.
 5. **`/mesh-status`** — live check of which of the 4 servers are actually
    connected in the current session (not just configured), plus RTK's hook
    status and agentmesh's current mode.
@@ -195,14 +196,14 @@ until it adds a plugin mechanism.
 
 ## Measured, not promised
 
-The README shows the real `/mesh-cost` table shape with placeholder values —
-no illustration, no invented numbers. The token/credit numbers this repo produces come from
-`dashboard/cost-report.js`, run for real, against the real Copilot CLI, from
-inside this session's development. See the script's own header comment for
-the caveats (it measures a warmed-up marginal cost, not a cold-start one; a
-few credits of run-to-run variance is normal — GitHub's backend caches
-something across back-to-back calls that isn't fully under this script's
-control).
+The README shows a real `/mesh-cost` table shape with placeholder values — no
+illustration, no invented numbers. `dashboard/cost-report.js` keeps provider
+units separate: Copilot's warmed marginal AI Credits and Claude's cache-aware
+input-token footprint plus client-estimated USD. Claude's default tool search
+defers MCP schemas, so its report covers idle registration overhead rather
+than later discovery calls or tool output. VS Code remains unsupported because
+it has no reproducible headless usage surface. Codex remains unsupported because
+Agentmesh does not yet register or isolate its MCP stack there.
 
 ## Sandbox-tested, not just reasoned about
 

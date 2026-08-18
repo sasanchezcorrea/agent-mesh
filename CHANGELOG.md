@@ -4,6 +4,15 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+- `/mesh-cost` now selects a provider adapter: Copilot CLI retains its warmed
+  AI Credit measurement, while Claude Code uses isolated, non-persistent MCP
+  runs and reports cache-aware input-token footprint plus estimated USD.
+- Unsupported or unavailable clients now fail explicitly instead of being
+  described as if their cost had been measured.
+
 ## [0.1.2] - 2026-07-18
 
 ### Changed

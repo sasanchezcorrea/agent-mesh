@@ -9,8 +9,8 @@
 
 <p align="center"><strong>One mesh for less cost, better context, and smaller changes.</strong></p>
 
-`/mesh-cost` prints a plain terminal table — a real, single-sample
-measurement, not a mockup:
+`/mesh-cost` prints a plain provider-native terminal table — a real,
+single-sample measurement, not a mockup. Copilot reports AI Credits:
 
 ```text
 Server       Marginal AI Credits (vs. zero-MCP floor)
@@ -25,8 +25,12 @@ full stack   --  (all 4 servers active)
 stack tax    --  credits over the floor
 ```
 
-Run `/mesh-cost` in Copilot CLI for your own live numbers. The README does
-not claim fixed savings or fabricate benchmark numbers.
+Claude Code reports the marginal cache-aware input-token footprint plus its
+client-estimated USD sample. Provider detection is automatic; manual runs can
+use `node dashboard/cost-report.js --provider=claude` (or `copilot`). The
+README does not claim fixed savings or fabricate benchmark numbers. VS Code
+has no headless usage feed, and Agentmesh does not register its stack in Codex
+yet, so those providers return explicit unsupported errors.
 
 agentmesh is a single integration layer for agent tools. It installs and wires
 the stack, keeps each host consistent, exposes operating modes, and shows what is connected.
@@ -159,7 +163,7 @@ disable Ponytail. Companion sync is best-effort and opt-out with
 | `/mesh [lite\|full\|ultra\|off]` | With an argument, sets that stack level for the session (see [Mesh modes](#mesh-modes)) and syncs Ponytail + RTK to match. With no argument, reports the currently active level. Does not persist across sessions. |
 | `/mesh default <level>` | Persists a level as the default for future sessions (not shown above — see `commands/mesh.toml`). |
 | `/mesh-status` | Read-only. Inspects the live tool list for *this exact session* (not the manifest or docs) and prints ✅/❌ per server — CodeGraph, AX, Engram, Serena — plus whether RTK's compression hook is configured and the current mesh mode. Never changes state. |
-| `/mesh-cost` | Runs `node dashboard/cost-report.js`, which drives the Copilot CLI 7 times (toggling `--disable-mcp-server` per tool) to measure real marginal AI-credit cost per server, and prints that output verbatim. If the script errors, it reports the real error — it never fabricates a plausible-looking table. Copilot CLI only; single-sample, expect run-to-run variance. |
+| `/mesh-cost` | Runs `node dashboard/cost-report.js`, auto-selecting a Copilot or Claude adapter. Copilot uses 7 calls and reports marginal AI Credits; Claude uses 6 isolated, non-persistent calls and reports cache-aware input-token footprint plus estimated USD when present. Unsupported hosts fail explicitly. Single-sample; expect run-to-run variance. |
 | `/mesh-evaluate` | Evaluates every *connected* server, hook, and mesh skill (not just what's in the manifest): working status, concrete value observed in this task, token/latency cost, overlap with other components, failure risk, and a keep/limit/remove call per mode. Uses `/mesh-cost` data when available; labels anything it can't measure as unknown instead of guessing. |
 
 ## Uninstall
